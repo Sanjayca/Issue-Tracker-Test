@@ -1,7 +1,11 @@
 const mongoose = require('mongoose');
-const url = 'mongodb://127.0.0.1/issue_tracker';
-// mongoose.connect('url') 
-mongoose.connect(url);
+// 
+const DB =
+  'mongodb+srv://Sanjay:s5ZNVDbjhv7oiKA0@cluster0.rgvrl1n.mongodb.net/?retryWrites=true&w=majority';
+
+mongoose.connect(DB).then(()=>{
+    console.log('Connection successful!');
+}).catch((err) => console.log("no connection " + err));
 const db=mongoose.connection;
 
 //If any Error then Getting this Line
